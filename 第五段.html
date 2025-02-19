@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>輸入密碼查看答案</title>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "48") {  // 設定唯一密碼
+                document.getElementById("answer").style.display = "block";
+                document.getElementById("passwordBox").style.display = "none";
+            } else {
+                alert("密碼錯誤！請再試一次。");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="passwordBox">
+        <h2>請輸入密碼查看答案</h2>
+        <input type="password" id="password" placeholder="輸入密碼">
+        <button onclick="checkPassword()">提交</button>
+    </div>
+    <div id="answer" style="display:none;">
+        <h2>這是你的答案：</h2>
+        <p>答案 乃</p> <!-- 這裡可以改成對應的答案 -->
+    </div>
+</body>
+</html>
